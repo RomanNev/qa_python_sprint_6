@@ -47,7 +47,7 @@
    pytest -v --browser chrome
 2. Запуск в Firefox (по умолчанию)
    ```bash
-   pytest -v --browser chrome
+   pytest -v 
    
 
 ## Генерация отчета Allure
