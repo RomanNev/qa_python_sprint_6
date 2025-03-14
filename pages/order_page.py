@@ -1,11 +1,13 @@
+import urls
 from locators.order_page_locators import OrderPageLocators
 from locators.base_page_locators import BasePageLocators
 from pages.base_page import BasePage
 
 
 class OrderPage(BasePage):
-    def __init__(self, driver, url):
-        super().__init__(driver, url)
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.url = urls.Urls.order_page_url
         self.locators = OrderPageLocators()
         self.locators_base = BasePageLocators()
 

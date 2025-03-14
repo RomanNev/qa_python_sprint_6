@@ -1,10 +1,12 @@
+import urls
 from locators.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
 
 
 class MainPage(BasePage):
-    def __init__(self, driver, url):
-        super().__init__(driver, url)
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.url = urls.Urls.main_page_url
         self.locators = MainPageLocators()
 
     def click_on_question_in_faq(self, question_locator):

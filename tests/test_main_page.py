@@ -13,7 +13,7 @@ class TestFAQDropdown:
         "Тест проверяет, что при клике на каждый вопрос в разделе 'Вопросы о важном' отображается соответствующий текст ответа.")
     def test_click_faq_question_expands_correct_answer(self, driver, question_locator, answer_locator, expected_text):
         with allure.step("Открытие главной страницы"):
-            page = MainPage(driver, Urls.main_page_url)
+            page = MainPage(driver)
             page.open()
         with allure.step(f"Клик на вопрос с локатором {question_locator}"):
             page.click_on_question_in_faq(question_locator)

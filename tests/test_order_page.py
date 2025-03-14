@@ -11,7 +11,7 @@ class TestLogoNavigation:
         "Тест проверяет, что при клике на логотип 'Самокат' на странице заказа происходит перенаправление на главную страницу сайта.")
     def test_click_scooter_logo_redirects_to_main_page(self, driver):# Тест проверяет, что клик на логотип 'Самоката' ведет на главную страницу
         with allure.step("Открытие страницы заказа"):
-            page = OrderPage(driver, Urls.order_page_url)
+            page = OrderPage(driver)
             page.open()
         with allure.step("Клик на логотип 'Самокат'"):
             page.click_scooter_logo()
@@ -26,7 +26,7 @@ class TestLogoNavigation:
         "Тест проверяет, что при клике на логотип 'Яндекс' открывается главная страница Дзена в новой вкладке через редирект.")
     def test_click_yandex_logo_opens_dzen_in_new_tab(self, driver): # Тест проверяет, что клик на логотип 'Яндекса' открывает главную страницу Дзена в новой вкладке.
         with allure.step("Открытие страницы заказа"):
-            page = OrderPage(driver, Urls.order_page_url)
+            page = OrderPage(driver)
             page.open()
         with allure.step("Клик на логотип 'Яндекс'"):
             page.click_yandex_logo()
@@ -46,12 +46,12 @@ class TestOrderScooter:
     def test_order_scooter(self, driver, order_button, user_data):
         """Проверяет оформление заказа при клике на кнопку 'Заказать' в хедере и футере на разных наборах данных через параметризацию """
         with allure.step("Открытие главной страницы"):
-            page = MainPage(driver, Urls.main_page_url)
+            page = MainPage(driver)
             page.open()
         with allure.step(f"Клик на кнопку 'Заказать' с локатором {order_button}"):
             page.click_order_button(order_button)
         with allure.step("Переход на страницу заказа"):
-            order_page = OrderPage(driver, driver.current_url)
+            order_page = OrderPage(driver)
         with allure.step("Заполнение формы 'Для кого самокат'"):
             order_page.fill_form_who_is_scooter(user_data)
         with allure.step("Нажатие кнопки 'Далее'"):
