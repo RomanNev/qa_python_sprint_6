@@ -2,7 +2,7 @@ import allure
 import pytest
 from data import Data
 from pages.main_page import MainPage
-from urls import Urls
+
 
 
 class TestFAQDropdown:
